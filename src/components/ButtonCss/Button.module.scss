@@ -1,0 +1,101 @@
+// Button.module.scss
+
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$danger-color: #dc3545;
+$white: #ffffff;
+$black: #000000;
+
+.button {
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 12px 16px;
+
+  &:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  // Variants
+  &--primary {
+    background-color: $primary-color;
+    color: $white;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+
+    &:active {
+      background-color: darken($primary-color, 15%);
+      transform: scale(0.98);
+    }
+
+    &:disabled {
+      background-color: rgba($primary-color, 0.5);
+    }
+  }
+
+  &--secondary {
+    background-color: $secondary-color;
+    color: $white;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
+
+    &:active {
+      background-color: darken($secondary-color, 15%);
+      transform: scale(0.98);
+    }
+
+    &:disabled {
+      background-color: rgba($secondary-color, 0.5);
+    }
+  }
+
+  &--danger {
+    background-color: $danger-color;
+    color: $white;
+
+    &:hover {
+      background-color: darken($danger-color, 10%);
+    }
+
+    &:active {
+      background-color: darken($danger-color, 15%);
+      transform: scale(0.98);
+    }
+
+    &:disabled {
+      background-color: rgba($danger-color, 0.5);
+    }
+  }
+
+  // Sizes
+  &--small {
+    padding: 8px 12px;
+  }
+
+  &--medium {
+    padding: 12px 16px;
+  }
+
+  &--large {
+    padding: 16px 20px;
+  }
+}
