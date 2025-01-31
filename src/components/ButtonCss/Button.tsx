@@ -2,6 +2,7 @@ import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import clsx from "clsx";
 import styles from "./Button.module.scss";
+import "./theme.css";
 
 const buttonVariants = cva(styles.button, {
   variants: {

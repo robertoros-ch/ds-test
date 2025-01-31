@@ -1,5 +1,22 @@
 // Button.module.scss
 
+
+:root {
+  --comp-button-color-default: var(--sys-color-primary);
+  --comp-button-color-secondary: var(--sys-color-secondary);
+  --comp-button-color-danger: var(--sys-color-danger);
+  --comp-button-color-text: var(--sys-color-text);
+
+  --comp-button-padding-small: var(--sys-spacing-paddingSm);
+  --comp-button-padding-medium: var(--sys-spacing-paddingMd);
+  --comp-button-padding-large: var(--sys-spacing-paddingLg);
+
+  --comp-button-borderRadius: var(--sys-borderRadius-default);
+
+  --comp-button-typography-fontSize: var(--sys-typography-defaultFontSize);
+  --comp-button-typography-fontWeight: var(--sys-typography-defaultFontWeight);
+}
+
 $primary-color: #007bff;
 $secondary-color: #6c757d;
 $danger-color: #dc3545;
@@ -7,22 +24,20 @@ $white: #ffffff;
 $black: #000000;
 
 .button {
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 6px;
+  font-size: var(--comp-button-typography-fontSize);
+  font-weight: var(--comp-button-typography-fontWeight);
+  border-radius: var(--comp-button-borderRadius);
   cursor: pointer;
   border: none;
-  transition:
-    background 0.2s ease,
-    transform 0.1s ease;
+  transition: background 0.2s ease, transform 0.1s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  padding: 12px 16px;
+  padding: var(--comp-button-padding-medium);
 
   &:focus {
-    outline: 2px solid $primary-color;
+    outline: 2px solid var(--comp-button-color-default);
     outline-offset: 2px;
   }
 
@@ -33,69 +48,69 @@ $black: #000000;
 
   // Variants
   &--primary {
-    background-color: $primary-color;
-    color: $white;
+    background-color: var(--comp-button-color-default);
+    color: var(--comp-button-color-text);
 
     &:hover {
-      background-color: darken($primary-color, 10%);
+      background-color: color-mix(in srgb, var(--comp-button-color-default) 90%, black);
     }
 
     &:active {
-      background-color: darken($primary-color, 15%);
+      background-color: color-mix(in srgb, var(--comp-button-color-default) 80%, black);
       transform: scale(0.98);
     }
 
     &:disabled {
-      background-color: rgba($primary-color, 0.5);
+      background-color: color-mix(in srgb, var(--comp-button-color-default) 50%, black);
     }
   }
 
   &--secondary {
-    background-color: $secondary-color;
-    color: $white;
+    background-color: var(--comp-button-color-secondary);
+    color: var(--comp-button-color-text);
 
     &:hover {
-      background-color: darken($secondary-color, 10%);
+      background-color: color-mix(in srgb, var(--comp-button-color-secondary) 90%, black);
     }
 
     &:active {
-      background-color: darken($secondary-color, 15%);
+      background-color: color-mix(in srgb, var(--comp-button-color-secondary) 80%, black);
       transform: scale(0.98);
     }
 
     &:disabled {
-      background-color: rgba($secondary-color, 0.5);
+      background-color: color-mix(in srgb, var(--comp-button-color-secondary) 50%, black);
     }
   }
 
   &--danger {
-    background-color: $danger-color;
-    color: $white;
+    background-color: var(--comp-button-color-danger);
+    color: var(--comp-button-color-text);
 
     &:hover {
-      background-color: darken($danger-color, 10%);
+      background-color: color-mix(in srgb, var(--comp-button-color-danger) 90%, black);
     }
 
     &:active {
-      background-color: darken($danger-color, 15%);
+      background-color: color-mix(in srgb, var(--comp-button-color-danger) 80%, black);
       transform: scale(0.98);
     }
 
     &:disabled {
-      background-color: rgba($danger-color, 0.5);
+      background-color: color-mix(in srgb, var(--comp-button-color-danger) 50%, black);
     }
   }
 
   // Sizes
   &--small {
-    padding: 8px 12px;
+    padding: var(--comp-button-padding-small);
   }
 
   &--medium {
-    padding: 12px 16px;
+    padding: var(--comp-button-padding-medium);
   }
 
   &--large {
-    padding: 16px 20px;
+    padding: var(--comp-button-padding-large);
   }
 }
