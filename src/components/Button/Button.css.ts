@@ -1,31 +1,5 @@
 import { recipe } from "@vanilla-extract/recipes";
 import { systemThemeContract } from "../../theme/system.css";
-import {
-  createGlobalTheme,
-  createTheme,
-  createThemeContract,
-} from "@vanilla-extract/css";
-
-// export const buttonTokens = createGlobalTheme(":root", {
-// // export const buttonTokens = createThemeContract({
-// // export const [classes,buttonTokens] = createTheme({
-//     color: {
-//         default: systemThemeContract.color.primary,
-//         secondary: systemThemeContract.color.secondary,
-//         danger: systemThemeContract.color.danger,
-//         text: systemThemeContract.color.text,
-//     },
-//     padding: {
-//         small: systemThemeContract.spacing.paddingSm,
-//         medium: systemThemeContract.spacing.paddingMd,
-//         large: systemThemeContract.spacing.paddingLg,
-//     },
-//     borderRadius: systemThemeContract.borderRadius.default,
-//     typography: {
-//         fontSize: systemThemeContract.typography.defaultFontSize,
-//         fontWeight: systemThemeContract.typography.defaultFontWeight,
-//     },
-// });
 
 export const buttonTokens = {
   color: {
